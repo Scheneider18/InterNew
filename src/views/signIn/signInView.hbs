@@ -1,0 +1,55 @@
+<style>
+  header {
+    display: none
+  }
+</style>
+<style>
+  #navigate-bar {
+    display: none
+  }
+</style>
+
+<div class="col-md-4 mx-auto p-4">
+  <div class="text-center">
+    <div class="text-center">
+        <h1>
+            <b>InterNews</b>
+        </h1>
+    </div>
+    <div>
+      <img class="center-img" src="../../img/tecnm_logo.png" title="Logotipo TecNM" alt="" />
+    </div>
+    <div class="text-center">
+      <h2>
+        <b>Instituto Tecnológico Superior de Xalapa</b>
+      </h2>
+    </div>
+  </div>
+</div>
+<div class="container-fluid p-4">
+  <div class="row">
+    <div class="col-md-4 mx-auto">
+      <div class="card text-center">
+        <div class="card-header">
+          <h3>Inicio de Sesión</h3>
+        </div>
+        <div class="card-body">
+          <form action="/signin" method="POST">
+            <div class="form-group">
+              <input type="text" name="no_control" placeholder="Número de Control" class="form-control" autofocus
+                required>
+            </div>
+            <div class="form-group">
+              <input type="password" name="password" placeholder="Contraseña" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <button class="btn btn-primary">
+                Iniciar Sesión
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="header-actividad">
+    <div class="titulo">
+        <h2>
+            <b>Participantes</b>
+        </h2>
+    </div>
+</div>
+
+
+<div class="container p-4">
+    <div class="card">
+        <div class="card-body"
+            style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+            <h4 class="card-title" style="font-weight: bold;">Tipo de participante</h4>
+            <p class="card-text">Por favor escoge el tipo de participante al cual desea darle un seguimiento oportuno.
+            </p>
+            <div class="d-grid gap-3 col-3 mx-auto">
+                <a href="/registers/aspirants/{{event.id_evento}}" class="btn btn-outline-info btn-md">Aspirantes</a>
+                <a href="/registers/accepted/{{event.id_evento}}" class="btn btn-outline-info btn-md">Aceptados</a>
+                <a href="/registers/rejected/{{event.id_evento}}" class="btn btn-outline-info btn-md">Rechazados</a>
+            </div>
+        </div>
+    </div>
+</div>

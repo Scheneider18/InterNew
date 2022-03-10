@@ -1,0 +1,121 @@
+<div class="header-actividad">
+    <div class="titulo">
+        <h2>
+            <b>Reportes</b>
+        </h2>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="mt-3">
+        <div class="table-responsive text-center">
+            <table class="table table-bordered table-hover align-middle table-scroll" data-mdb-perfect-scrollbar="true"
+                style="position: relative; height: auto;">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">Número de Control</th>
+                        <th scope="col">Nombre Completo</th>
+                        <th scope="col">Estado</th>
+                        <th scope="col">Número de reporte</th>
+                        <th scope="col">Observar</th>
+                        <th scope="col">Revisado</th>
+                    </tr>
+                </thead>
+                {{#each reporA}}
+                <tbody class="table-light">
+                    <tr>
+                        <td>
+                            {{no_control}}
+                        </td>
+                        <td>{{nombre}} {{apellido_p}} {{apellido_m}}</td>
+                        <td>{{estado}}</td>
+                        <td>{{no_repor}}</td>
+                        <td>
+                            <a href="/tracings/table/view/{{no_control}}/{{id_conv}}/{{no_repor}}"
+                                class="btn btn-primary btn-sm px-3">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                        </td>
+                        <td>
+                            <button class="btn btn-success"
+                                onclick="revisar({{id_conv}},'{{no_control}}',{{no_repor}},'{{estado}}')">
+                                Revisar
+                                <i class="fas fa-check"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+                {{/each}}
+                {{#each reporB}}
+                <tbody class="table-light">
+                    <tr>
+                        <td>
+                            {{no_control}}
+                        </td>
+                        <td>{{nombre}} {{apellido_p}} {{apellido_m}}</td>
+                        <td>{{estado}}</td>
+                        <td>{{no_repor}}</td>
+                        <td>
+                            <a href="/tracings/table/view/{{no_control}}/{{id_conv}}/{{no_repor}}"
+                                class="btn btn-primary btn-sm px-3">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                        </td>
+                        <td>
+                            <button class="btn btn-success"
+                                onclick="revisar({{id_conv}},'{{no_control}}',{{no_repor}},'{{estado}}')">
+                                Revisar
+                                <i class="fas fa-check"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+                {{/each}}
+            </table>
+        </div>
+    </div>
+    <div class="contenedor-back">
+        <a href="/tracings/reports" class="btn btn-danger">
+            Regresar
+            <i class="fas fa-arrow-left"></i>
+        </a>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.0.2/dist/sweetalert2.all.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+    function revisar(id, no_control, no_repor, estado) {
+        let url = "/tracings/table/check/";
+        if (estado == 'Revisado') {
+            Swal.fire({
+                title: 'Registro ya revisado.',
+                //showCancelButton: true,
+                confirmButtonText: 'Confirmar',
+                cancelButtonText: 'Cancelar',
+            });
+        } else {
+            Swal.fire({
+                title: '¿Confirmar revisión de reporte?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Confirmar',
+                cancelButtonText: 'Cancelar',
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    //procedimiento borrar
+                    axios.get(url + no_control + '/' + id + '/' + no_repor).then((response) => {
+                        location.reload();
+                        this.mostrar();
+                    });
+                    //Swal.fire('¡Eliminado!', '', 'success')
+                } else if (result.isDenied) {
+                }
+            });
+        }
+    }
+
+    function mostrar() {
+        let url = "/tracings";
+        return axios.get(url);
+    }
+</script>

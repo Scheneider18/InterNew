@@ -1,0 +1,60 @@
+<div class="container-fluid p-4">
+    <div class="row">
+        <div class="container mx-auto">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h3>Registro de Usuario</h3>
+                </div>
+                <div class="card-body">
+                    <form action="/signup" method="POST">
+                        <div class="datos">
+                            <div class="contenedorUno p-2">
+                                <div class="form-group">
+                                    <input type="text" name="no_control" placeholder="Numero de control"
+                                        class="form-control" autofocus required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="apellido_m" placeholder="Apellido Materno"
+                                        class="form-control" required>
+                                </div>
+                                <input type="password" name="password" class="form-control" placeholder="Contraseña" required>
+                            </div>
+                            <div class="contenedorDos p-2">
+                                <div class="form-group">
+                                    <input type="text" name="nombre" placeholder="Nombre" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="correo_ins" placeholder="Correo Institucional"
+                                        class="form-control" required>
+                                </div>
+                                <select class="from-group mb-3 form-select" aria-label="Disabled select example"
+                                    name="cargo" required>
+                                    <option selected disabled>Selecciona el estado</option>
+                                    <option value="Alumno">Alumno</option>
+                                    <option value="Docente">Docente</option>
+                                    <option value="Encargado" selected>Encargado</option>
+                                </select>
+                            </div>
+                            <div class="contenedorTres p-2">
+                                <div class="form-group">
+                                    <input type="text" name="apellido_p" placeholder="Apellido Paterno"
+                                        class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="departamento" placeholder="Departamento Asignado"
+                                        class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-success btn-block">
+                                        Registrarse
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

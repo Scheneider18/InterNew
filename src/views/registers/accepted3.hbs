@@ -1,0 +1,86 @@
+<div class="header-actividad">
+    <div class="titulo">
+        <h2>
+            <b>Participantes Aceptados</b>
+        </h2>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="mt-3">
+        <div class="table-responsive text-center">
+            <table class="table table-bordered table-hover align-middle table-scroll" data-mdb-perfect-scrollbar="true"
+                style="position: relative; height: auto;">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">Número de Control</th>
+                        <th scope="col">Foto</th>
+                        <th scope="col">Nombre Completo</th>
+                        <th scope="col">Perfil</th>
+                        <th scope="col">Eliminar</th>
+                    </tr>
+                </thead>
+                {{#each accepteds}}
+                <tbody class="table-light">
+                    <tr>
+                        <td>
+                            {{no_control}}
+                        </td>
+                        <td>
+                            <img src="../../img/profile.jpeg" alt="Usuario" class="rounded-circle p-1" width="70">
+                        </td>
+                        <td>{{nombre}} {{apellido_p}} {{apellido_m}}</td>
+                        <td>
+                            <a href="/registers/participants/profile/{{no_control}}"
+                                class="btn btn-secondary">Perfil</a>
+                        <td>
+                            <button onclick="rechazar({{id_reg}})" class="btn btn-danger">
+                                Eliminar
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+                {{else}}
+                <div class="col-md-4 mx-auto mb-4">
+                    <div class="card card-body text-center">
+                        <p>No hay registros aún.</p>
+                    </div>
+                </div>
+                {{/each}}
+            </table>
+        </div>
+    </div>
+    <div class="contenedor-back">
+        <a href="/registers/participants3" class="btn btn-danger">
+            Regresar
+            <i class="fas fa-arrow-left"></i>
+        </a>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.0.2/dist/sweetalert2.all.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+    function rechazar(id) {
+        let url = "/registers/rejected/delete/";
+        Swal.fire({
+            title: '¿Estás seguro de que deseas eliminar al usuario?',
+            confirmButtonText: `Confirmar`,
+            showCancelButton: true,
+        }).then((result) => {
+            if (result.isConfirmed) {
+                //procedimiento borrar
+                axios.get(url + id).then((response) => {
+                    this.mostrar();
+                    location.reload();
+                });
+                //Swal.fire('¡Eliminado!', '', 'success')
+            } else if (result.isDenied) {
+            }
+        });
+    }
+    function mostrar(){
+        let url = "/registers/participants1"
+        return axios.get(url);
+    }
+</script>

@@ -1,0 +1,30 @@
+<div class="header-actividad">
+    <div class="titulo">
+        <h2>
+            <b>Registros</b>
+        </h2>
+    </div>
+</div>
+<div class="container p-4">
+    <div class="col">
+        {{#each announs}}
+        <div class="row-md-3 p-2">
+            <div class="card text-center">
+                <div class="card-body">
+                    <img src="../../../../img/ejemplo1.png"
+                                class="card-img-top img-card-img" alt=" " />
+                    <h5 class="card-title text-uppercase">{{titulo}}</h5>
+                    <p class="m-2">{{descripcion}}</p>
+                    <a href="/registers/type/{{id_conv}}" class="btn btn-primary">Ver participantes</a>
+                </div>
+            </div>
+        </div>
+        {{else}}
+        <div class="col-md-4 mx-auto">
+            <div class="card card-body text-center">
+                <p>No hay registros aún.</p>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>

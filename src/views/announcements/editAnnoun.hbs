@@ -1,0 +1,336 @@
+<div class="header-actividad">
+    <div class="titulo">
+        <h2>
+            <b>Editar Convocatoria</b>
+        </h2>
+    </div>
+    <div class="contenedor-botones">
+        <a href="/announs" class="btn btn-danger">
+            Cancelar
+            <i class="fas fa-times-circle"></i>
+        </a>
+    </div>
+</div>
+<div class="container-fluid p-2.5">
+    <div class="row">
+        <div class="container">
+            <form id="formid" action="/announs/edit/{{conv.id_conv}}" method="POST">
+                <div class="datos">
+                    <div class="contenedorUno p-2">
+                        <div class="form-group mb-2">
+                            <input type="text" class="form-control" value="{{conv.titulo}}" name="titulo"
+                                placeholder="Titulo" autofocus required>
+                        </div>
+                        <div class="form-text">
+                            Fechas de entrega de reportes
+                        </div>
+                        <div class="fecha mt-2">
+                            <label class="form-check-label">Fecha de Reporte de inicio:</label>
+                            <div class="form-group">
+                                <div class='input-group date' id='datetimepicker2'>
+                                    <input type="date" class="form-control" value="{{conv.fecha_ini_repo}}"
+                                        name="fecha_ini_repo" required />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fecha mt-2 mb-3">
+                            <label class="form-check-label">Fecha de Reporte de finalización:</label>
+                            <div class="form-group">
+                                <div class='input-group date' id='datetimepicker2'>
+                                    <input type="date" class="form-control" value="{{conv.fecha_fin_repo}}"
+                                        name="fecha_fin_repo" required />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="formFileSm" class="form-label">Selecciona imagen:</label>
+                            <input class="form-control form-control-sm" name="imagen" type="file"
+                                accept="application/png, .jpg, .jpeg" >
+                        </div>
+                        <div class="form-group mb-2">
+                            <input type="text" class="form-control mt-1" value="{{conv.imagen}}" name="imagen2" readonly >
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="formFileSm" class="form-label">Selecciona archivo:</label>
+                            <input class="form-control form-control-sm" name="archivo" type="file"
+                                accept="application/pdf" >
+                        </div>
+                        <div class="form-group mb-2">
+                            <input type="text" class="form-control mt-1" value="{{conv.archivo}}" name="archivo2"
+                                readonly>
+                        </div>
+                        <div class="form-group btn-guardar">
+                            <div class="d-flex flex-direction-row">
+                                <button class="input-group-text btn btn-success" id="inputGroupPrepend">
+                                    <i class="fas fa-save mr-1"></i>
+                                    Guardar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contenedorDos p-2">
+                        <div class="form-group mb-3">
+                            <textarea name="descripcion" rows="5" class="form-control textarea"
+                                placeholder="Descripción" required>{{conv.descripcion}}</textarea>
+                        </div>
+                        <div class="form-group mb-3">
+                            <textarea name="pregunta" rows="8" class="form-control textarea" placeholder="Preguntas"
+                                required>{{conv.pregunta}}</textarea>
+                        </div>
+                    </div>
+                    <div class="contenedorTres p-2">
+                        <div class="form-group mb-3">
+                            <div class="form-text">
+                                Tiempo de duración
+                            </div>
+                            <div class="fecha mt-2">
+                                <label class="form-check-label">Fecha de Inicio:</label>
+                                <div class="form-group">
+                                    <div class='input-group date' id='datetimepicker2'>
+                                        <input type="date" class="form-control" value="{{conv.fecha_ini}}"
+                                            name="fecha_ini" required />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fecha mt-2">
+                                <label class="form-check-label">Fecha de Finalización:</label>
+                                <div class="form-group">
+                                    <div class='input-group date' id='datetimepicker2'>
+                                        <input type="date" class="form-control" value="{{conv.fecha_fin}}"
+                                            name="fecha_fin" required />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group mt-3">
+                                <div class="form-text">
+                                    Estado de la actividad:
+                                </div>
+                                <select class="from-group mb-3 form-select" aria-label="Disabled select example"
+                                    id="estado1" name="estado" required>
+                                    <option selected disabled>Selecciona el estado</option>
+                                    <option value="Disponible">Disponible</option>
+                                    <option value="En proceso">En proceso</option>
+                                    <option value="Finalizado">Finalizado</option>
+                                </select>
+                            </div>
+                            <div class="form-group mt-3">
+                                <div class="form-text">
+                                    Empresa de convenio:
+                                </div>
+                                <select class="from-group mb-3 form-select" aria-label="Disabled select example"
+                                    name="empresa" required>
+                                    <option selected disabled>Selecciona la empresa</option>
+                                    <option value="YIPI Studios">YIPI Studios</option>
+                                    <option value="Santander">Santander</option>
+                                    <option value="Universiad Veracruzana">Universiad Veracruzana</option>
+                                    <option value="University of Pennsylvania">University of Pennsylvania</option>
+                                </select>
+                            </div>
+                            <div class="form-group mt-3">
+                                <div class="form-text">
+                                    ¿Cuenta con convenio?:
+                                </div>
+                                <div class="form-check">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <label for="viaticos">
+                                                <input type="radio" name="viaticos" id="option1" autocomplete="off" value="Sí"> Sí
+                                            </label>
+                                            <label>
+                                                <input type="radio" name="viaticos" id="option2" autocomplete="off" value="No"> No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="datos">
+                            <div class="columna">
+                                <div class="form-group mb-3">
+                                    <div class="form-text">
+                                        Semestres dirigidos:
+                                    </div>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="Primer semestre"
+                                        name="semestre">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        Primer semestre
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="Segundo semestre"
+                                        name="semestre">
+                                    <label class="form-check-label" for="flexCheckChecked">
+                                        Segundo semestre
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="Tercer semestre"
+                                        name="semestre">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        Tercer semestre
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="Cuarto semestre"
+                                        name="semestre">
+                                    <label class="form-check-label" for="flexCheckChecked">
+                                        Cuarto semestre
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="Quinto semestre"
+                                        name="semestre">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        Quinto semestre
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="Sexto semestre"
+                                        name="semestre">
+                                    <label class="form-check-label" for="flexCheckChecked">
+                                        Sexto semestre
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="Septimo semestre"
+                                        name="semestre">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        Séptimo semestre
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="Octavo semestre"
+                                        name="semestre">
+                                    <label class="form-check-label" for="flexCheckChecked">
+                                        Octavo semestre
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="Noveno semestre"
+                                        name="semestre">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        Noveno semestre
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="columna">
+                                <div class="form-group mb-3">
+                                    <div class="form-text">
+                                        Carrera enfocada:
+                                    </div>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="Ing. Bioquímica"
+                                        name="carrera">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        Ing. Bioquímica
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="Ing. Civil" name="carrera">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        Ing. Civil
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="Ing. Electromecánica"
+                                        name="carrera">
+                                    <label class="form-check-label" for="flexCheckChecked">
+                                        Ing. Electromecánica
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="Ing. en Electrónica"
+                                        name="carrera">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        Ing. en Electrónica
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="Ing. en Gestión Empresarial"
+                                        name="carrera">
+                                    <label class="form-check-label" for="flexCheckChecked">
+                                        Ing. en Gestión Empresarial
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox"
+                                        value="Ing. en Industrias Alimentarias" name="carrera">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        Ing. en Industrias Alimentarias
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox"
+                                        value="Ing. en Sistemas Computacionales" name="carrera">
+                                    <label class="form-check-label" for="flexCheckChecked">
+                                        Ing. en Sistemas Computacionales
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="Ing. Industrial"
+                                        name="carrera">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        Ing. Industrial
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="Ing. Mecatrónica"
+                                        name="carrera">
+                                    <label class="form-check-label" for="flexCheckChecked">
+                                        Ing. Mecatrónica
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="Lic. en Gastronomía"
+                                        name="carrera">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        Lic. en Gastronomía
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#estado1 > option[value="{{conv.estado}}"]').attr('selected', 'selected');
+    });
+</script>
+<script type="text/javascript">
+    let sem = "{{conv.semestre}}";
+    let seme = sem.split(',');
+    $(document).ready(function () {
+        $('#formid input[type=checkbox]').each(function () {
+            let t = $(this).val();
+            for (let value of seme) {
+                if(t == value){
+                    this.checked = true;
+                }
+            }
+        });
+    })
+
+    let car = "{{conv.carrera}}";
+    let carre = car.split(',');
+    $(document).ready(function () {
+        $('#formid input[type=checkbox]').each(function () {
+            let t = $(this).val();
+            for (let value of carre) {
+                if(t == value){
+                    this.checked = true;
+                }
+                console.log(value);
+            }
+            console.log(t);
+        });
+    })
+    console.log(carre);
+</script>

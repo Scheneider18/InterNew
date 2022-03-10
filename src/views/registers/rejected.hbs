@@ -1,0 +1,64 @@
+<div class="header-actividad">
+    <div class="titulo">
+        <h2>
+            <b>Participantes Rechazados</b>
+        </h2>
+    </div>
+</div>
+
+
+<div class="container-fluid">
+    <div class="mt-3">
+        <div class="table-responsive text-center">
+            <table class="table table-bordered table-hover align-middle table-scroll" data-mdb-perfect-scrollbar="true"
+                style="position: relative; height: auto;">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">Número de Control</th>
+                        <th scope="col">Foto</th>
+                        <th scope="col">Nombre Completo</th>
+                        <th scope="col">Perfil</th>
+                    </tr>
+                </thead>
+                {{#each rejecteds}}
+                <tbody class="table-light">
+                    <tr>
+                        <td>
+                            {{no_control}}
+                        </td>
+                        <td>
+                            <img src="../../img/profile.jpeg" alt="Usuario" class="rounded-circle p-1" width="70">
+                        </td>
+                        <td>{{nombre}} {{apellido_p}} {{apellido_m}}</td>
+                        <td>
+                            <a href="/registers/participants/profile/{{no_control}}"
+                                class="btn btn-secondary">Perfil</a>
+                    </tr>
+                </tbody>
+                {{/each}}
+                {{#each rejecteds}}
+                <tbody class="table-light">
+                    <tr>
+                        <td>
+                            {{no_control}}
+                        </td>
+                        <td>
+                            <img src="../../img/profile.jpeg" alt="Usuario" class="rounded-circle p-1" width="70">
+                        </td>
+                        <td>{{nombre}} {{apellido_p}} {{apellido_m}}</td>
+                        <td>
+                            <a href="/registers/participants/profile/{{no_control}}"
+                                class="btn btn-secondary">Perfil</a>
+                    </tr>
+                </tbody>
+                {{/each}}
+            </table>
+        </div>
+    </div>
+    <div class="contenedor-back">
+        <a href="javascript: history.go(-1)" class="btn btn-danger">
+            Regresar
+            <i class="fas fa-arrow-left"></i>
+        </a>
+    </div>
+</div>

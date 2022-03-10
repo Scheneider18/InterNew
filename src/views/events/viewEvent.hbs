@@ -1,0 +1,134 @@
+<div class="header-actividad">
+    <div class="titulo">
+        <h2>
+            <b>Consulta Evento</b>
+        </h2>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="card">
+        <card class="card-header">
+            <div class="card-cabezera">
+                <div class="card-titulo">
+                    <h5 class="card-title">
+                        {{conv.titulo}}
+                    </h5>
+                </div>
+                <div class="card-preguntas">
+                    <button class="btn btn-info rounded-circle" data-toggle="modal" data-target="#questions">
+                        <i class="fas fa-question"></i>
+                    </button>
+                    <!-- Inicio Modal -->
+                    <div class="modal fade" id="questions" data-bs-backdrop="static" data-bs-keyboard="false"
+                        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="staticBackdropLabel">Preguntas</h5>
+                                </div>
+                                <div class="modal-body">
+                                    <p>{{conv.pregunta}}</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <div class="row justify-content-end no-gutters">
+                                        <div class="col-auto">
+                                            <button type="button" class="btn btn-danger px-4" data-dismiss="modal">
+                                                Salir
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Fin Modal -->
+                </div>
+            </div>
+        </card>
+        <div class="card-body">
+            <div class="d-flex">
+                <div class="contenedor-imagen">
+                    <div class="mb-3">
+                        <img src="../../../../img/ejemplo1.png"
+                            class="img-thumbnail" width="250" height="200" alt=" ">
+                    </div>
+                </div>
+                <div class="contenedor-fecha">
+                    <div class="mb-3">
+                        <label for="fechaIni" class="form-label">Fecha de Inicio:</label>
+                        <input type="text" class="form-control" value="{{conv.fecha_ini}}" name="fecha_ini" disabled>
+                    </div>
+                </div>
+                <div class="contenedor-fecha">
+                    <div class="mb-3">
+                        <label for="fechaFin" class="form-label">Fecha de Finalización:</label>
+                        <input type="text" class="form-control" value="{{conv.fecha_fin}}" name="fecha_fin" disabled>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="estado" class="form-label">Estado:</label>
+                <input type="text" class="form-control" value="{{conv.estado}}" name="estado" disabled>
+            </div>
+            <div class="mb-3">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="empresa" class="form-label">Empresa de convenio:</label>
+                        <input type="text" class="form-control" value="Santander" name="empresa" placeholder="Santander" disabled>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="viatico" class="form-label">Viático:</label>
+                        <input type="text" class="form-control" value="Sí" name="viatico" placeholder="Sí" disabled>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-1">
+                <label for="fechaReportes" class="form-label">Fechas de entrega de reportes</label>
+            </div>
+            <div class="d-flex">
+                <div class="reportesFecha">
+                    <div class="mb-3">
+                        <label for="fecha_ini_reporte" class="form-label">Fecha de reporte de inicio:</label>
+                        <input type="text" class="form-control" value="{{conv.fecha_ini_repo}}" name="fecha_ini_reporte"
+                            disabled>
+                    </div>
+                </div>
+                <div class="reportesFecha">
+                    <div class="mb-3">
+                        <label for="fecha_fin_reporte" class="form-label">Fecha de reporte de finalización:</label>
+                        <input type="text" class="form-control" value="{{conv.fecha_fin_repo}}" name="fecha_fin_reporte"
+                            disabled>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="descripcion" class="form-label">Descripción:</label>
+                <textarea name="descripcion" rows="5" class="form-control textarea"
+                    disabled>{{conv.descripcion}}</textarea>
+            </div>
+            <div class="mb-3">
+                <label for="carrera" class="form-label">Carreras participantes:</label>
+                <input type="text" class="form-control" value="{{conv.carrera}}" name="carrera" disabled>
+            </div>
+            <div class="mb-3">
+                <label for="semestre" class="form-label">Semestres participantes:</label>
+                <input type="text" class="form-control" value="{{conv.semestre}}" name="semestre" disabled>
+            </div>
+            <div class="mb-3">
+                <label for="file" class="form-label">Archivo Adjunto:</label>
+                <a href="#" class="btn btn-danger" download=" ">
+                    <i class="fas fa-file-pdf fa-5x"></i>
+                </a>
+            </div>
+        </div>
+        <div class="card-footer">
+            <div class="contenedor-back">
+                <a href="/events" class="btn btn-danger">
+                    Regresar
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

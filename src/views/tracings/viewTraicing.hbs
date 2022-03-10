@@ -1,0 +1,56 @@
+<div class="header-actividad">
+    <div class="titulo">
+        <h2>
+            <b>Reporte</b>
+        </h2>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="p-4">
+        <form>
+            <div class="row mb-3">
+                <label for="fecha-realizacion" class="col-sm-2 col-form-label"><b>Fecha de realización</b></label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="fecha-realizacion" value="{{reporte.fecha_rea}}" disabled>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="identificador" class="col-sm-2 col-form-label"><b>Nombre Completo</b></label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="identificador" value="{{reporte.nombre}} {{reporte.apellido_p}} {{reporte.apellido_m}}" disabled>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="identificador" class="col-sm-2 col-form-label"><b>Número de Control</b></label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="identificador" value="{{reporte.no_control}}" disabled>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="carrera" class="col-sm-2 col-form-label"><b>Carrera</b></label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="carrera" value="{{reporte.carrera}}" disabled>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="titulo" class="col-sm-2 col-form-label"><b>Título</b></label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="titulo" value="{{reporte.titulo}}" disabled>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="descripcion" class="col-sm-2 col-form-label"><b>Descripción</b></label>
+                <div class="col-sm-10">
+                    <textarea name="descripcion" rows="10" class="form-control" style="resize: none;"
+                        disabled>{{reporte.descripcion}}</textarea>
+                </div>
+            </div>
+        </form>
+        <div class="contenedor-back">
+        <a href="javascript: history.go(-1)" class="btn btn-danger">
+            Regresar
+            <i class="fas fa-arrow-left"></i>
+        </a>
+    </div>
+    </div>
+</div>

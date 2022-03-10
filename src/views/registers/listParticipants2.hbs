@@ -1,0 +1,30 @@
+<div class="header-actividad">
+    <div class="titulo">
+        <h2>
+            <b>Registros</b>
+        </h2>
+    </div>
+</div>
+<div class="container p-4">
+    <div class="row">
+        {{#each events}}
+        <div class="col-md-3 p-1">
+            <div class="card text-center">
+                <div class="card-body">
+                    <img src="https://www.adslzone.net/app/uploads-adslzone.net/2019/04/borrar-fondo-imagen.jpg"
+                        class="card-img-top" alt=" " />
+                    <h5 class="card-title text-uppercase">{{titulo}}</h5>
+                    <p class="m-2">{{descripcion}}</p>
+                    <a href="/registers/type2/{{id_evento}}" class="btn btn-primary">Ver participantes</a>
+                </div>
+            </div>
+        </div>
+        {{else}}
+        <div class="col-md-4 mx-auto">
+            <div class="card card-body text-center">
+                <p>No hay registros aún.</p>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>

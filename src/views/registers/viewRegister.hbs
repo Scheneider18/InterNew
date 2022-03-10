@@ -1,0 +1,63 @@
+<div class="header-actividad">
+    <div class="titulo">
+        <h2>
+            <b>Registro</b>
+        </h2>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="p-4">
+        <div class="row mb-3">
+            <label for="identificador" class="col-sm-2 col-form-label"><b>Nombre Completo</b></label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="identificador"
+                    value="{{register.nombre}} {{register.apellido_p}} {{register.apellido_m}}" disabled>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="identificador" class="col-sm-2 col-form-label"><b>Número de Control</b></label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="identificador" value="{{register.no_control}}" disabled>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="carrera" class="col-sm-2 col-form-label"><b>Carrera</b></label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="carrera" value="{{register.carrera}}" disabled>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="titulo" class="col-sm-2 col-form-label"><b>Semestre</b></label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="titulo" value="{{register.semestre}}" disabled>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="titulo" class="col-sm-2 col-form-label"><b>Título</b></label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="titulo" value="{{register.titulo}}" disabled>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="titulo" class="col-sm-2 col-form-label"><b>Correo Ext.</b></label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="titulo" value="{{register.correo_ext}}" disabled>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="archivo" class="col-sm-2 col-form-label"><b>Archivo Adjunto:</b></label>
+            <div class="col-sm-10">
+                <a href="#" class="btn btn-danger" download=" ">
+                    <i class="fas fa-file-pdf fa-5x"></i>
+                </a>
+            </div>
+        </div>
+        <div class="contenedor-back">
+            <a href="javascript: history.go(-1)" class="btn btn-danger">
+                Regresar
+                <i class="fas fa-arrow-left"></i>
+            </a>
+        </div>
+    </div>
+</div>

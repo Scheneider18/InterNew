@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-lg navbar-inverse bg-inverse navbar-toggleable-sm sticky-top navbar-dark bg-dark" id="navigate-bar">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">InterNews</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto text-center">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="/init">Inicio</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenu" role="button" data-toggle="dropdown"
+            aria-expanded="false">
+            Actividades
+          </a>
+          <div class="dropdown-menu text-center" aria-labelledby="navbarDropdownMenu">
+            <a class="dropdown-item" href="/announs">Convocatorias</a>
+            <a class="dropdown-item" href="/events">Eventos</a>
+            <a class="dropdown-item" href="/scholars">Becas</a>
+          </div>
+        </li>
+        {{!-- <li class="nav-item">
+          <a class="nav-link" href="/chat">Chat</a>
+        </li> --}}
+        <li class="nav-item">
+          <a class="nav-link" href="/registers">Participantes registrados</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/tracings">Seguimiento</a>
+        </li>
+        {{!-- <li class="nav-item">
+          <a class="nav-link" href="/profile">Perfil</a>
+        </li> --}}
+        <div class="nav-item">
+          <a href="/auth/signin" id="salir" class="btn btn-danger my-2 my-sm-0" >Salir</a>
+        </div>
+      </ul>
+    </div>
+  </div>
+  </div>
+</nav>

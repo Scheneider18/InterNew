@@ -1,0 +1,24 @@
+<div class="header-actividad">
+    <div class="titulo">
+        <h2>
+            <b>Seguimiento</b>
+        </h2>
+    </div>
+</div>
+<div class="container p-4">
+    <div class="row">
+        {{#each announs}}
+        <div class="col-md-3 p-1">
+            <div class="card text-center">
+                <div class="card-body">
+                    <img src="https://www.adslzone.net/app/uploads-adslzone.net/2019/04/borrar-fondo-imagen.jpg"
+                        class="card-img-top" alt=" " />
+                    <h5 class="card-title text-uppercase">{{titulo}}</h5>
+                    <p class="m-2">{{descripcion}}</p>
+                    <a href="/tracings/table/{{id_conv}}" class="btn btn-primary">Reportes</a>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
